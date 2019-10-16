@@ -19,15 +19,11 @@ namespace SpookyPark.Controllers
 
         public ActionResult Create()
         {
-            ViewBag.Id = new SelectList(_db.EntertainmentTypes, "Id", "Name");
+            ViewBag.ETid = new SelectList(_db.EntertainmentTypes, "ETid", "Name");
             return View();
         }
 
-        // public ActionResult Create()
-        // {
-        //     ViewBag.CategoryId = new SelectList(_db.Categories, "CategoryId", "Name");
-        //     return View();
-        // }
+
 
 
         [HttpPost]

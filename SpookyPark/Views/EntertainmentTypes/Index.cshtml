@@ -13,7 +13,7 @@
 <ul>
     @foreach (EntertainmentType et in Model)
     {
-        <li>@Html.ActionLink($"{et.Name}", "Details", new {id = et.Id})</li>
+        <li>@Html.ActionLink($"{et.Name}", "Details", new {id = et.ETid})</li>
     }
 
 </ul>

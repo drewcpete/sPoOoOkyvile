@@ -18,12 +18,12 @@
     @Html.LabelFor(model =>model.Location)
     @Html.TextBoxFor(model => model.Location, new { @class = "form-control", @type ="number" })
 
-    @Html.LabelFor(model =>model.Id, new {@class = "hidden"})
-    @Html.TextBoxFor(model => model.Id, new {@class = "hidden"})
+    @Html.LabelFor(model =>model.AttractionId, new {@class = "hidden"})
+    @Html.TextBoxFor(model => model.AttractionId, new {@class = "hidden"})
 
 
     @Html.LabelFor(model => model.EntertainmentType)
-    @Html.DropDownList("Id")
+    @Html.DropDownList("ETid")
 
     </div>
 
