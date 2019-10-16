@@ -1,0 +1,19 @@
+@{
+    Layout = "_Layout";
+}
+
+@using SpookyPark.Models;
+
+<h1> Entertainment Types: </h1>
+
+@if(@Model.Count == 0)
+{
+    <a href="/create">Add an entertainment type!</a>
+}
+<ul>
+    @foreach (EntertainmentType et in Model)
+    {
+        <li>@Html.ActionLink($"{et.Name}", "Details", new {id = et.Id})</li>
+    }
+
+</ul>

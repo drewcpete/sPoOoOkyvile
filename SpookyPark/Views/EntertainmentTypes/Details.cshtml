@@ -1,0 +1,29 @@
+@{
+    Layout = "_Layout";
+}
+
+@using SpookyPark.Models;
+@model SpookyPark.Models.EntertainmentType;
+
+<h2>Entertainment Details</h2>
+<hr/>
+<h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
+
+<ul>
+    @if (@Model.Attractions.Count == 0)
+    {
+        <p>There are no attractions in this Entertainment Type</p>
+    }
+
+    @foreach (Attraction attraction in @Model.Attractions)
+    {
+        <li>
+            Name: 
+        </li>
+    }
+</ul>
+
+@Html.Button("Edit Entertainment Types",  "Edit")
+
+<input class="btn btn-danger" type="button" value="Back to Entertainment Types" onclick="location.href='<%: Url.Action("Index") %>'" />
+<input class="btn btn-danger" type="button" value="Edit" onclick="location.href='<%: Url.Action("Edit") %>'" />

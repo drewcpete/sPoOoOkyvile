@@ -1,0 +1,27 @@
+@{
+    Layout = "_Layout";
+}
+
+@model SpookyPark.Models.EntertainmentType
+
+<h4>Add a new Entertainment Type</h4>
+
+@using(Html.BeginForm())
+{
+    <div class="form-group">
+    @Html.LabelFor(model =>model.Name)
+    @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+
+    @Html.LabelFor(model =>model.Price)
+    @Html.TextBoxFor(model => model.Price, new { @class = "form-control", @type ="number" })
+
+    @Html.LabelFor(model =>model.AgeRestriction)
+    @Html.CheckBoxFor(model => model.AgeRestriction, new { @class = "form-control", @checked = "false"})
+
+    @Html.LabelFor(model =>model.Id, new {@class = "hidden"})
+    @Html.TextBoxFor(model => model.Id, new {@class = "hidden"})
+    </div>
+
+    <input class ="btn btn-danger" type="submit" value="Add Entertainment Type!!">
+
+}
