@@ -18,12 +18,11 @@
     @foreach (Attraction attraction in @Model.Attractions)
     {
         <li>
-            Name: 
+            Name: @(attraction.Name)
         </li>
     }
 </ul>
 
-@Html.Button("Edit Entertainment Types",  "Edit")
-
-<input class="btn btn-danger" type="button" value="Back to Entertainment Types" onclick="location.href='<%: Url.Action("Index") %>'" />
-<input class="btn btn-danger" type="button" value="Edit" onclick="location.href='<%: Url.Action("Edit") %>'" />
+@Html.ActionLink("Edit",  "Edit", new {id = @Model.Id})
+<br>
+@Html.ActionLink("Back to Entertainment Types",  "Index")

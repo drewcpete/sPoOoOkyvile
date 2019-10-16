@@ -1,7 +1,7 @@
 @{
     Layout = "_Layout";
 }
-
+@using SpookyPark.Models
 @model SpookyPark.Models.EntertainmentType
 
 <h4>Add a new Entertainment Type</h4>
@@ -10,20 +10,14 @@
 {
     <div class="form-group">
     @Html.LabelFor(model =>model.Name)
-    @Html.EditorFor(model => model.Name, new { @class = "form-control" })
-
+    @Html.EditorFor(model => model.Name, new { @class = "form-control"})
+    <br>
     @Html.LabelFor(model =>model.Price)
     @Html.EditorFor(model => model.Price, new { @class = "form-control", @type ="number" })
-
+    <br>
     @Html.LabelFor(model =>model.AgeRestriction)
     @Html.CheckBoxFor(model => model.AgeRestriction, new { @class = "form-control", @checked = "false"})
 
-    @Html.LabelFor(model =>model.Attractions)
-    @Html.EditorFor(model => model.Attractions, new { @class = "form-control" })
-
-    @Html.LabelFor(model =>model.Id, new {@class = "hidden"})
-    @Html.EditorFor(model => model.Id, new {@class = "hidden"})
-    </div>
-
     <input class = "btn btn-danger" type="submit" value="Save Changes!">
+    </div>
 }

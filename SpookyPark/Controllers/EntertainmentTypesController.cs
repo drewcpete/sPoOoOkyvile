@@ -15,6 +15,7 @@ namespace SpookyPark.Controllers
             _db = db;
         }
 
+
         public ActionResult Index()
         {
             List<EntertainmentType> model = _db.EntertainmentTypes.ToList();
@@ -38,6 +39,19 @@ namespace SpookyPark.Controllers
         {
             EntertainmentType et = _db.EntertainmentTypes.FirstOrDefault(e => e.Id == id);
             return View(et);        
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var thisET = _db.EntertainmentTypes.FirstOrDefault(e => e.Id == id);
+            return View(thisET);
+        }
+        [HttpPost]
+        public ActionResult Edit(EntertainmentType ET)
+        {
+            _db.Entry(ET).State = EntityState.Modified;
+            _db.SaveChanges();
+            return RedirectToAction("Index");
         }
 
     }
