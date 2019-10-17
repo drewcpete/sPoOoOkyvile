@@ -9,6 +9,7 @@
 @using(Html.BeginForm())
 {
     <div class="form-group">
+        @Html.HiddenFor(model => model.AttractionId)
         @Html.LabelFor(model =>model.Name)
         @Html.EditorFor(model => model.Name, new { @class="form-control"})
 
@@ -17,6 +18,7 @@
    
         @Html.LabelFor(model =>model.Location)
         @Html.EditorFor(model => model.Location, new { @class="form-control"})
+        @Html.HiddenFor(model => model.EntertainmentTypeId)
     </div>
 
     <input class="btn btn-dark" type="submit" value="Save Edits to Attraction!">
