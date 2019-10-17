@@ -9,7 +9,7 @@
 @using(Html.BeginForm())
 {
     <div class="form-group">
-        @Html.HiddenFor(model => model.AttractionId)
+
         @Html.LabelFor(model =>model.Name)
         @Html.EditorFor(model => model.Name, new { @class="form-control"})
 
