@@ -75,8 +75,5 @@ namespace SpookyPark.Controllers
             _db.SaveChanges();
             return RedirectToAction("Index");
         }
-
-
-
     }
 }
