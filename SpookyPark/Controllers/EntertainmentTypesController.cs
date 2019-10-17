@@ -37,13 +37,13 @@ namespace SpookyPark.Controllers
         
         public ActionResult Details(int id)
         {
-            EntertainmentType et = _db.EntertainmentTypes.FirstOrDefault(e => e.ETid == id);
+            EntertainmentType et = _db.EntertainmentTypes.FirstOrDefault(e => e.EntertainmentTypeId == id);
             return View(et);        
         }
 
         public ActionResult Edit(int id)
         {
-            var thisET = _db.EntertainmentTypes.FirstOrDefault(e => e.ETid == id);
+            var thisET = _db.EntertainmentTypes.FirstOrDefault(e => e.EntertainmentTypeId == id);
             return View(thisET);
         }
         [HttpPost]

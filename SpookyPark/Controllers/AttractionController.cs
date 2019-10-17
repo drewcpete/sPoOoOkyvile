@@ -11,6 +11,11 @@ namespace SpookyPark.Controllers
     {
         private readonly SpookyParkContext _db;
 
+        public AttractionsController(SpookyParkContext db)
+        {
+            _db = db;
+        }
+
         public ActionResult Index ()
         {
             List<Attraction> model = _db.Attractions.Include(a =>a.EntertainmentType).ToList();
@@ -19,7 +24,7 @@ namespace SpookyPark.Controllers
 
         public ActionResult Create()
         {
-            ViewBag.ETid = new SelectList(_db.EntertainmentTypes, "ETid", "Name");
+            ViewBag.EntertainmentTypeId = new SelectList(_db.EntertainmentTypes, "EntertainmentTypeId", "Name");
             return View();
         }
 

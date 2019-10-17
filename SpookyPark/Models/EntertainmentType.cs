@@ -15,7 +15,7 @@ namespace SpookyPark.Models
         public string Name { get; set; }
         public int Price { get; set; }
         public bool AgeRestriction {get; set;}
-        public int ETid { get; set; }
+        public int EntertainmentTypeId { get; set; }
         public virtual ICollection<Attraction> Attractions { get; set; }
    }
 }

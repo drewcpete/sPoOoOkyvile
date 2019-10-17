@@ -13,17 +13,17 @@
     @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
 
     @Html.LabelFor(model =>model.Desc)
-    @Html.TextBoxFor(model => model.Desc, new { @class = "form-control", @type ="number" })
+    @Html.TextBoxFor(model => model.Desc, new { @class = "form-control"})
 
     @Html.LabelFor(model =>model.Location)
-    @Html.TextBoxFor(model => model.Location, new { @class = "form-control", @type ="number" })
+    @Html.TextBoxFor(model => model.Location, new { @class = "form-control"})
 
     @Html.LabelFor(model =>model.AttractionId, new {@class = "hidden"})
     @Html.TextBoxFor(model => model.AttractionId, new {@class = "hidden"})
 
 
     @Html.LabelFor(model => model.EntertainmentType)
-    @Html.DropDownList("ETid")
+    @Html.DropDownList("EntertainmentTypeId")
 
     </div>
 
