@@ -1,3 +1,23 @@
 @{
     Layout = "_Layout";
 }
+
+@model SpookyPark.Models.Attraction
+
+<h4>Edit Attraction</h4>
+
+@using(Html.BeginForm())
+{
+    <div class="form-group">
+        @Html.LabelFor(model =>model.Name)
+        @Html.EditorFor(model => model.Name, new { @class="form-control"})
+
+        @Html.LabelFor(model =>model.Desc)
+        @Html.EditorFor(model => model.Desc, new { @class="form-control"})  
+   
+        @Html.LabelFor(model =>model.Location)
+        @Html.EditorFor(model => model.Location, new { @class="form-control"})
+    </div>
+
+    <input class="btn btn-dark" type="submit" value="Save Edits to Attraction!">
+}

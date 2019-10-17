@@ -12,6 +12,9 @@
 <h4>@Html.DisplayNameFor(model => model.Desc): @Html.DisplayFor(model => model.Desc)</h4>
 <h4>@Html.DisplayNameFor(model => model.Desc): @Model.Desc</h4>
 
-<p>@ViewBag.EntertainmentTypeName</p>
+<h4>Type of Entertainment: @ViewBag.EntertainmentTypeName</h4>
 
 <h4>Type of Entertainment: @Model.EntertainmentType.Name</h4>
+
+
+@Html.ActionLink("Edit this Attraction!",  "Edit", new {id = @Model.AttractionId})

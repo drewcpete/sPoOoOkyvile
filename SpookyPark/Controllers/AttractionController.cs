@@ -32,7 +32,8 @@ namespace SpookyPark.Controllers
         public ActionResult Create(Attraction attraction)
         {
             _db.Attractions.Add(attraction);
-            _db.SaveChanges();
+            _db.SaveChanges(); 
+
             return RedirectToAction("Index");
         }
 
@@ -42,6 +43,9 @@ namespace SpookyPark.Controllers
             Attraction attraction = _db.Attractions.FirstOrDefault(a => a.AttractionId == id);
             
             var thisET = _db.EntertainmentTypes.FirstOrDefault(e => e.EntertainmentTypeId == attraction.EntertainmentTypeId);
+// This line is super important for unknown reasons.  it allows @Model.EntertainmentType.Name to display in the details
+
+
 
             ViewBag.EntertainmentTypeName = thisET.Name;
             return View(attraction);   

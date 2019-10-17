@@ -37,7 +37,7 @@ namespace SpookyPark.Controllers
         
         public ActionResult Details(int id)
         {
-            EntertainmentType et = _db.EntertainmentTypes.FirstOrDefault(e => e.EntertainmentTypeId == id);
+            EntertainmentType et = _db.EntertainmentTypes.Include(e => e.Attractions).FirstOrDefault(e => e.EntertainmentTypeId == id);
             return View(et);        
         }
 
