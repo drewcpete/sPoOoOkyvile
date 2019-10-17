@@ -16,10 +16,10 @@
 {
     string urlEnd = $"{attraction.Name}.jpg";
     <div class="card" style="width: 18rem;">
-        <img src="@($"~/img/{urlEnd}")" class="card-img-top" alt="...">
+        <!-- <img src="@($"~/img/{urlEnd}")" class="card-img-top" alt="..."> -->
         <div class="card-body">
             <p class="card-text">
-                @Html.ActionLink($"{attraction.Name}", "Details", new { id = attraction.AttractionId }) | @attraction.EntertainmentType.Name
+                @Html.ActionLink($"{attraction.Name}", "Details", new { id = attraction.AttractionId }) <br> @attraction.EntertainmentType.Name
             </p>
         </div>
     </div>

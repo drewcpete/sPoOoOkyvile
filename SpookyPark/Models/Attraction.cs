@@ -1,9 +1,16 @@
-using System;
+using Microsoft.AspNetCore.Mvc;
+using SpookyPark.Models;
 using System.Collections.Generic;
+using System.Linq;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using System;
+
 
 
 namespace SpookyPark.Models
 {
+
     public class Attraction
     {
         public string Name { get; set; }
@@ -15,5 +22,4 @@ namespace SpookyPark.Models
 
         public float DeathCount { get; set; }
     }
-
 }

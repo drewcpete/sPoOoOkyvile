@@ -16,9 +16,9 @@ namespace SpookyPark.Controllers
             _db = db;
         }
 
-        public ActionResult Index ()
+        public ActionResult Index()
         {
-            List<Attraction> model = _db.Attractions.Include(a =>a.EntertainmentType).ToList();
+            List<Attraction> model = _db.Attractions.Include(a => a.EntertainmentType).ToList();
             return View(model);
         }
 
@@ -28,15 +28,24 @@ namespace SpookyPark.Controllers
             return View();
         }
 
-
-
-
         [HttpPost]
         public ActionResult Create(Attraction attraction)
         {
             _db.Attractions.Add(attraction);
             _db.SaveChanges();
             return RedirectToAction("Index");
-        }  
+        }
+
+
+        public ActionResult Details(int id)
+        {
+            Attraction attraction = _db.Attractions.FirstOrDefault(a => a.AttractionId == id);
+            
+            var thisET = _db.EntertainmentTypes.FirstOrDefault(e => e.EntertainmentTypeId == attraction.EntertainmentTypeId);
+
+            ViewBag.EntertainmentTypeName = thisET.Name;
+            return View(attraction);   
+        }
+
     }
 }

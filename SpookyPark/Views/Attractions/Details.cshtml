@@ -1,3 +1,17 @@
 @{
     Layout = "_Layout";
 }
+
+@using SpookyPark.Models
+@model SpookyPark.Models.Attraction;
+
+<h2>Attraction Details</h2>
+<hr>
+<h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
+
+<h4>@Html.DisplayNameFor(model => model.Desc): @Html.DisplayFor(model => model.Desc)</h4>
+<h4>@Html.DisplayNameFor(model => model.Desc): @Model.Desc</h4>
+
+<p>@ViewBag.EntertainmentTypeName</p>
+
+<h4>Type of Entertainment: @Model.EntertainmentType.Name</h4>
